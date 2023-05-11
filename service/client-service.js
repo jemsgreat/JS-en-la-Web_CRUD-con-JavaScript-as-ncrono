@@ -37,14 +37,14 @@ const crearNuevaLinea = (nombre, email) => {     //back thicks
 
 const table = document.querySelector("[data-table]");
 
-const listaCliente = () => {
-    const promise = new promise((resolve, reject) =>{
+const listaClientes = () => {
+    const promise = new Promise((resolve, reject) => {
         const http = new XMLHttpRequest();
         http.open("GET", "http://localhost:3000/perfil");
         http.send();
         http.onload = () => {
             const response = JSON.parse(http.response);
-            if (http.status>= 400){
+            if (http.status>= 400) {
                 reject(response)
             }else{
                 resolve(response)
@@ -64,9 +64,7 @@ listaClientes()
     })
     .catch((error) => alert('ocurrio un error'));
 
-/*
-    
-*/
+
 
 
 
