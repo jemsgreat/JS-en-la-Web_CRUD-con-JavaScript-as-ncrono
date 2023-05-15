@@ -1,4 +1,71 @@
+const listaClientes = () => fetch("http://localhost:3000/perfil").then((respuesta) => respuesta.json());
+
+export const clientServices = {
+  listaClientes
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //backticks
+/*
 const crearNuevaLinea = (nombre, email) => {
     const linea = document.createElement("tr");
     const contenido = `
@@ -37,7 +104,14 @@ const crearNuevaLinea = (nombre, email) => {
   // Read   - GET
   // Update - PUT/PATCH
   // Delete - DELETE
-  
+
+  //modo fetch API
+  const listaClientes = () => fetch("http://localhost:3000/perfil").then((respuesta) => respuesta.json());
+
+
+
+  //modo promises
+  /*
   const listaClientes = () => {
     const promise = new Promise((resolve, reject) => {
       const http = new XMLHttpRequest();
@@ -68,4 +142,4 @@ const crearNuevaLinea = (nombre, email) => {
   
   // console.log(data);
   //
-  
+  */
