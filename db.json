@@ -1,13 +1,13 @@
 {
   "perfil": [
     {
-      "nombre": "jhonattan",
+      "nombre": "Jhonattan",
       "email": "jmercadosenior@gmail.com",
       "id": 4
     },
     {
-      "nombre": "yina",
-      "email": "yina@alura.com",
+      "nombre": "Yina",
+      "email": "Yina@alura.com",
       "id": 5
     },
     {
@@ -26,8 +26,8 @@
       "id": 11
     },
     {
-      "nombre": "LaChikorita",
-      "email": "LaChikorita@alura.com",
+      "nombre": "Chikorita",
+      "email": "chikorita@alura.com",
       "id": 12
     }
   ]

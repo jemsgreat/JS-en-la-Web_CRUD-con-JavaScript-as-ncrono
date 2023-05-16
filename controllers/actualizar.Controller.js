@@ -1,8 +1,8 @@
 import { clientServices } from "../service/client-service.js";
 
 const formulario = document.querySelector("[data-form]");
-
-const obtenerInformacion = () => {
+// Aula 5 Async 
+const obtenerInformacion = async () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
     
@@ -12,13 +12,30 @@ const obtenerInformacion = () => {
     
     const nombre = document.querySelector("[data-nombre]");
     const email = document.querySelector("[data-email]");
-    
-    console.log (nombre, " - " ,email);
-    
-    clientServices.detalleCliente(id).then((perfil) => {
+
+    //modo con try y await no necesita then se utiliza el try para comprobar errores Aula 5
+    try {
+        const perfil = await clientServices.detalleCliente(id)
+        if (perfil.nombre && perfil.email) {
+            nombre.value = perfil.nombre;
+            email.value = perfil.email;
+        } else {
+            throw new Error();
+        }        
+    } catch (error) {
+        window.location.href = "/screens/error.html";
+    }
+    //modo con solo await
+    /*
+    const perfil = await clientServices.detalleCliente(id)
+    nombre.value = perfil.nombre;
+    email.value = perfil.email; */
+    /* modo sin await
+    clientServices.detalleCliente(id)
+    .then((perfil) => {
         nombre.value = perfil.nombre;
         email.value = perfil.email;
-    });
+    }); */
 };
 
 obtenerInformacion();
